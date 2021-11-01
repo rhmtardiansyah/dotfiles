@@ -1,0 +1,9 @@
+#!/bin/sh
+
+## Start GNOME Keyring
+#eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gpg)
+#export SSH_AUTH_SOCK
+
+exec dwm
+#exec dbus-launch bspwm
+#exec dbus-launch i3
