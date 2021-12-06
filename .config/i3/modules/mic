@@ -1,0 +1,26 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+	1) pavucontrol ;;
+	2) notify-send "Left Click Pavucontrol" "Right Click Pulsemixer" ;;
+	3) "$TERMINAL" -t "float" -e "pulsemixer" ;;
+esac
+
+# PulseAudio
+in_mute=$(pamixer --source 2 --get-mute)
+in_vol=$(pamixer --source 1 --get-volume)
+
+# Alsa
+# in_mute=$(awk -F"[][]" '/Left:/ { print $4 }' <(amixer sget Capture))
+# in_vol=$(awk -F"[][]" '/Left:/ { print $2 }' <(amixer sget Capture) | cut -f 1 -d '%')
+
+icon_in_on="🎙️"
+icon_in_off="🤫"
+
+if   ([ $in_mute = "false" ]); then
+    echo "$icon_in_on $in_vol%"
+elif ([ $in_mute = "true" ]); then
+    echo "$icon_in_off"
+else
+    echo "$icon_ou_off ERROR"
+fi
