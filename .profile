@@ -4,6 +4,10 @@ if [ -d "$HOME/.local/bin" ] ;
   then PATH="$HOME/.local/bin:$PATH"
 fi
 
+if [ -d "$HOME/.local/bin/dmenu" ] ;
+  then PATH="$HOME/.local/bin/dmenu:$PATH"
+fi
+
 # Default programs:
 export EDITOR="nvim"
 export TERMINAL="alacritty"
@@ -18,6 +22,17 @@ export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
 export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 export HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/history"
 export _JAVA_AWT_WM_NONREPARENTING=1	# Fix for Java applications in dwm
+
+export ANDROID_HOME=$HOME/.android/SDK
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+USERXSESSION="$XDG_CACHE_HOME/X11/xsession"
+USERXSESSIONRC="$XDG_CACHE_HOME/X11/xsessionrc"
+ALTUSERXSESSION="$XDG_CACHE_HOME/X11/Xsession"
+ERRFILE="$XDG_CACHE_HOME/X11/xsession-errors"
 
 export LF_ICONS="\
 di=:\

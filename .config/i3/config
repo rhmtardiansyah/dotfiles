@@ -1,0 +1,287 @@
+# Mod 4 = Windows Key
+set $mod Mod4
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# Window Container Border Settings
+# syntax: new_window normal|none|pixel
+new_window pixel 2
+# Syntax: new_float normal|none|pixel
+new_float pixel 2
+
+# Gaps settings
+smart_gaps on
+# smart_borders on
+
+#default gap sizes
+set $gapsinner 10
+set $gapsouter 10
+
+# set default gaps
+gaps inner $gapsinner
+gaps outer $gapsouter
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:FiraCode Nerd Font, JetBrainsMono Nerd Font, monospace 11
+
+### Auto Start
+# set brightness
+exec --no-startup-id brightnessctl set 45%
+# NetworkManager is the most popular way to manage wireless networks on Linux,
+# and nm-applet is a desktop environment-independent system tray GUI for it.
+exec --no-startup-id nm-applet
+# Set Wallpaper
+exec --no-startup-id xwallpaper --zoom ~/pic/Wallpapers/bg.jpg
+# Remaps CapsLock to Escape
+exec --no-startup-id remaps
+# Enable tap to click
+exec --no-startup-id xinput set-prop "SYNA0001:00 06CB:CE2D Touchpad" "libinput Tapping Enabled" 1
+# Fast Terminal
+exec --no-startup-id xset r rate 300 50
+# compositor
+exec --no-startup-id picom
+# clipboard manager
+exec --no-startup-id greenclip daemon
+# Policy Kit
+exec --no-startup-id xfce-polkit
+# Screenshot
+exec --no-startup-id flameshot
+
+# Volume Control
+bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer --increase 5 && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume exec --no-startup-id pamixer --decrease 5 && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioMute exec --no-startup-id pamixer -t && pkill -RTMIN+10 i3blocks
+
+# Microphone Control
+bindsym Shift+XF86AudioRaiseVolume exec --no-startup-id amixer set Capture 5%+ && pkill -RTMIN+11 i3blocks
+bindsym Shift+XF86AudioLowerVolume exec --no-startup-id amixer set Capture 5%- && pkill -RTMIN+11 i3blocks
+bindsym XF86AudioMicMute exec --no-startup-id amixer set Capture toggle && pkill -RTMIN+11 i3blocks
+
+# Brightness Control
+bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+
+# start a terminal
+bindsym $mod+Return exec alacritty
+bindsym $mod+Shift+Return exec alacritty -t float
+
+# kill focused window
+bindsym $mod+q kill
+
+### Costum Keybinds
+bindsym $mod+Shift+Escape exec --no-startup-id power-dmenu
+bindsym $mod+Shift+q exec --no-startup-id kill-dmenu
+bindsym $mod+w exec --no-startup-id websearch-dmenu
+
+# Clipboard keybinds
+bindsym $mod+p exec --no-startup-id greenclip-dmenu
+bindsym $mod+Shift+p exec --no-startup-id greenclip clear
+
+# Screenshot Keybins
+bindsym Print exec --no-startup-id flameshot full -c
+bindsym $Mod+Print exec --no-startup-id flameshot gui
+bindsym $Mod+Shift+Print exec --no-startup-id flameshot full -c -d 3000 -p ~/pic/screenshot
+
+bindsym $mod+v exec --no-startup-id alacritty -t float -e "pulsemixer"
+
+# bar toggle, hide or show 
+bindsym $mod+b bar mode toggle
+
+# Make the Currently Focused Window a Scratchpad
+bindsym $mod+Shift+minus move scratchpad
+# Show the First Scratchpad Window
+bindsym $mod+minus scratchpad show
+
+# For Direct Border Changing with Keyboard Shortcut
+bindsym $mod+Shift+u border normal 2
+bindsym $mod+u border pixel 2
+
+# Sticky Floating Windows
+# Syntax: sticky enable|disable|toggle
+bindsym $mod+Shift+plus sticky toggle
+
+# start dmenu (a program launcher)
+bindsym $mod+d exec --no-startup-id dmenu_run -p run
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split toggle
+bindsym $mod+Tab split toggle
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+t layout toggle split
+bindsym $mod+Shift+t layout tabbed
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# bindsys $mod+Shift+delete exec --no-startup-id bash i3-msg exit
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+# class                 border  bground text    indicator child_border
+client.focused          #BF616A #BF616A #2E3440 #D08770   #BF616A
+client.focused_inactive #2E3440 #2E3440 #ECEFF4 #2E3440   #2E3440
+client.unfocused        #2E3440 #2E3440 #ECEFF4 #2E3440   #2E3440
+client.urgent           #900000 #900000 #FFFFFF #900000   #900000
+client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
+
+client.background       #FFFFFF
+
+bar {
+  status_command i3blocks -c ~/.config/i3/i3blocks.conf
+  colors {
+    background #2E3440
+    statusline #ECEFF4
+    separator  #4C566A
+
+    focused_workspace  #D08770 #D08770 #2E3440
+    active_workspace   #2E3440 #2E3440 #ECEFF4
+    inactive_workspace #2E3440 #2E3440 #ECEFF4
+    urgent_workspace   #900000 #900000 #ECEFF4
+    binding_mode       #ebcb8b #ebcb8b #2E3440
+  }
+}
+
+# Enable Floating Mode for Specific Programs
+for_window [class="Alacritty" title="float+"] floating enable border pixel 2
+for_window [title="Android Emulator - Pixel_2_API_29:5554"] floating enable border normal 2
+for_window [class="jetbrains-studio"] floating enable border normal 2
+for_window [class="Lxappearance"] floating enable border normal 2
+for_window [class="Gnome-calculator"] floating enable border normal 2
+

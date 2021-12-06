@@ -5,16 +5,13 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Luke's config for the Zoomer Shell
-
 # Enable colors and change prompt:
 autoload -U colors && colors	# Load colors
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 setopt autocd		# Automatically cd into typed directory.
 setopt interactive_comments
 
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#6272A4,bold,underline"
-
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#6272A4,bold"
 # History in cache directory:
 HISTSIZE=10000000
 SAVEHIST=10000000
@@ -59,11 +56,16 @@ lfcd () {
 }
 bindkey -s '^o' 'lfcd\n'
 
-bindkey '^ ' autosuggest-accept
+
 # Load syntax highlighting; should be last.
-source /home/rahmat/.config/zsh/fsh/fast-syntax-highlighting.plugin.zsh 2>/dev/null
-source /home/rahmat/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.config/zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
+
+bindkey '^ ' autosuggest-accept
+
+FAST_HIGHLIGHT_STYLES[path]='none'
+FAST_HIGHLIGHT_STYLES[path-to-dir]='fg=blue'
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
