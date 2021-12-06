@@ -284,4 +284,5 @@ for_window [title="Android Emulator - Pixel_2_API_29:5554"] floating enable bord
 for_window [class="jetbrains-studio"] floating enable border normal 2
 for_window [class="Lxappearance"] floating enable border normal 2
 for_window [class="Gnome-calculator"] floating enable border normal 2
+for_window [class="mpv"] floating enable border normal 2
 
