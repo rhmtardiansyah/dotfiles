@@ -55,8 +55,8 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pamixer --decrease 5 && pkill 
 bindsym XF86AudioMute exec --no-startup-id pamixer -t && pkill -RTMIN+10 i3blocks
 
 # Microphone Control
-bindsym Shift+XF86AudioRaiseVolume exec --no-startup-id amixer set Capture 5%+ && pkill -RTMIN+11 i3blocks
-bindsym Shift+XF86AudioLowerVolume exec --no-startup-id amixer set Capture 5%- && pkill -RTMIN+11 i3blocks
+bindsym $mod+F3 exec --no-startup-id amixer set Capture 5%+ && pkill -RTMIN+11 i3blocks
+bindsym $mod+F2 exec --no-startup-id amixer set Capture 5%- && pkill -RTMIN+11 i3blocks
 bindsym XF86AudioMicMute exec --no-startup-id amixer set Capture toggle && pkill -RTMIN+11 i3blocks
 
 # Brightness Control
