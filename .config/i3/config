@@ -151,7 +151,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
-# bindsys $mod+Shift+delete exec --no-startup-id bash i3-msg exit
+bindsym $mod+Shift+Delete exec i3-msg exit
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
