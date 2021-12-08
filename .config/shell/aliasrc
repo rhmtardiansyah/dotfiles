@@ -7,14 +7,19 @@
 alias \
 	cp="cp -iv" \
 	mv="mv -iv" \
-	rm="rm -vI" \
+	rm="rm -vI"
 
 # Colorize commands when possible.
 alias \
 	ls="exa --group-directories-first --icons" \
 	grep="grep --color=auto" \
-	diff="diff --color=auto" \
+	diff="diff --color=auto"
 
 alias \
     lf="lfrun" \
     bare='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+alias \
+    tl="tmux ls" \
+    ta="tmux attach-session -t" \
+    tk="tmux kill-session -t"

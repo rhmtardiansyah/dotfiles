@@ -155,8 +155,8 @@ bindsym $mod+Shift+Delete exec i3-msg exit
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
+set $ws1 "1:"
+set $ws2 "2:"
 set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
@@ -270,7 +270,7 @@ bar {
     statusline #ECEFF4
     separator  #4C566A
 
-    focused_workspace  #D08770 #D08770 #2E3440
+    focused_workspace  #D08770 #BF616A #2E3440
     active_workspace   #2E3440 #2E3440 #ECEFF4
     inactive_workspace #2E3440 #2E3440 #ECEFF4
     urgent_workspace   #900000 #900000 #ECEFF4
