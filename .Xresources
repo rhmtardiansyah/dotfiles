@@ -1,77 +1,60 @@
-#define nord0 #2E3440
-#define nord1 #3B4252
-#define nord2 #434C5E
-#define nord3 #4C566A
-#define nord4 #D8DEE9
-#define nord5 #E5E9F0
-#define nord6 #ECEFF4
-#define nord7 #8FBCBB
-#define nord8 #88C0D0
-#define nord9 #81A1C1
-#define nord10 #5E81AC
-#define nord11 #BF616A
-#define nord12 #D08770
-#define nord13 #EBCB8B
-#define nord14 #A3BE8C
-#define nord15 #B48EAD
+! Base16 Tomorrow Night
+! Scheme: Chris Kempson (http://chriskempson.com)
+
+#define base00 #2d2d2d
+#define base01 #393939
+#define base02 #515151
+#define base03 #999999
+#define base04 #b4b7b4
+#define base05 #cccccc
+#define base06 #e0e0e0
+#define base07 #ffffff
+#define base08 #f2777a
+#define base09 #f99157
+#define base0A #ffcc66
+#define base0B #99cc99
+#define base0C #66cccc
+#define base0D #6699cc
+#define base0E #cc99cc
+#define base0F #a3685a
 
 !! dwm :
-dwm.normfgcolor: nord6
-dwm.normbgcolor: nord0
-dwm.normbordercolor: nord3
-dwm.normfloatcolor : nord10
-
-dwm.selfgcolor: nord0
-dwm.selbgcolor: nord0
-dwm.selbordercolor: nord11
-dwm.selfloatcolor: nord12
-
-dwm.titlenormfgcolor: nord0
-dwm.titlenormbgcolor: nord0
-dwm.titleselfgcolor: nord0
-dwm.titleselbgcolor: nord12
-
-dwm.tagsnormfgcolor: nord6
-dwm.tagsnormbgcolor: nord0
-
-dwm.tagsselfgcolor: nord0
-dwm.tagsselbgcolor: nord12
-
-dwm.urgfgcolor: nord6
-dwm.urgbgcolor: nord11
-dwm.urgbordercolor: nord15
-dwm.urgfloatcolor: nord15
+!! dwm.normfgcolor: nord6
+!! dwm.normbgcolor: nord0
+!! dwm.normbordercolor: nord3
+!! dwm.normfloatcolor : nord10
+!! 
+!! dwm.selfgcolor: nord0
+!! dwm.selbgcolor: nord0
+!! dwm.selbordercolor: nord11
+!! dwm.selfloatcolor: nord12
+!! 
+!! dwm.titlenormfgcolor: nord0
+!! dwm.titlenormbgcolor: nord0
+!! dwm.titleselfgcolor: nord0
+!! dwm.titleselbgcolor: nord12
+!! 
+!! dwm.tagsnormfgcolor: nord6
+!! dwm.tagsnormbgcolor: nord0
+!! 
+!! dwm.tagsselfgcolor: nord0
+!! dwm.tagsselbgcolor: nord12
+!! 
+!! dwm.urgfgcolor: nord6
+!! dwm.urgbgcolor: nord11
+!! dwm.urgbordercolor: nord15
+!! dwm.urgfloatcolor: nord15
 
 !! simple terminal :
-st.alpha: 0.88
-st.borderpx: 0
-st.cursorColor: nord4
-st.rCursorColor: nord0
-st.foreground: nord4
-st.background: nord0
-st.color0: nord1
-st.color1: nord11
-st.color2: nord14
-st.color3: nord13
-st.color4: nord9
-st.color5: nord15
-st.color6: nord8
-st.color7: nord5
-st.color8: nord3
-st.color9: nord11
-st.color10: nord14
-st.color11: nord13
-st.color12: nord9
-st.color13: nord15
-st.color14: nord7
-st.color15: nord6
-
-!! dmenu :
-dmenu.foreground: nord6
-dmenu.background: nord0
-dmenu.selbackground: nord11
-dmenu.selforeground: nord0
-dmenu.font: FiraCode Nerd Font-10
-
-Xcursor.theme: Comix Cursor original White Opaque
-Xcursor.size: 48
+!! st.alpha: 0.88
+!! st.borderpx: 0
+!! 
+!! !! dmenu :
+!! dmenu.foreground: nord6
+!! dmenu.background: nord0
+!! dmenu.selbackground: nord11
+!! dmenu.selforeground: nord0
+!! dmenu.font: FiraCode Nerd Font-10
+!! 
+!! Xcursor.theme: Comix Cursor original White Opaque
+!! Xcursor.size: 48

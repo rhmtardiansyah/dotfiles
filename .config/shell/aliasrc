@@ -16,10 +16,12 @@ alias \
 	diff="diff --color=auto"
 
 alias \
-    lf="lfrun" \
     bare='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 alias \
     tl="tmux ls" \
     ta="tmux attach-session -t" \
     tk="tmux kill-session -t"
+
+alias \
+    clean="make clean && rm config.h"

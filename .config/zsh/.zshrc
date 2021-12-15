@@ -44,27 +44,28 @@ bindkey '^[[P' delete-char
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^n' edit-command-line
 
-# Use lf to switch directories and bind it to ctrl-o
-lfcd () {
-    tmp="$(mktemp)"
-    lfrun -last-dir-path="$tmp" "$@"
-    if [ -f "$tmp" ]; then
-        dir="$(cat "$tmp")"
-        rm -f "$tmp" >/dev/null
-        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
-    fi
+function ranger-cd {
+    tempfile="$(mktemp -t tmp.XXXXXX)"
+    /usr/bin/ranger --choosedir="$tempfile" "${@:-$(pwd)}"
+    test -f "$tempfile" &&
+    if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
+        cd -- "$(cat "$tempfile")"
+    fi  
+    rm -f -- "$tempfile"
 }
-bindkey -s '^o' 'lfcd\n'
 
+
+bindkey -s '^O' 'ranger-cd\n'
 
 # Load syntax highlighting; should be last.
-source ~/.config/zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
+source ~/.local/app/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source ~/.local/app/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.local/app/powerlevel10k/powerlevel10k.zsh-theme
 
 bindkey '^ ' autosuggest-accept
 
 FAST_HIGHLIGHT_STYLES[path]='none'
+FAST_HIGHLIGHT_STYLES[comment]='fg=red'
 FAST_HIGHLIGHT_STYLES[path-to-dir]='fg=blue'
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.

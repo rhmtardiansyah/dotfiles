@@ -28,12 +28,12 @@ font pango:FiraCode Nerd Font, JetBrainsMono Nerd Font, monospace 11
 
 ### Auto Start
 # set brightness
-exec --no-startup-id brightnessctl set 45%
+exec --no-startup-id brightnessctl set 30%
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 # Set Wallpaper
-exec --no-startup-id xwallpaper --zoom ~/pic/Wallpapers/bg.jpg
+exec --no-startup-id xwallpaper --zoom ~/Pictures/Wallpapers/1.jpg
 # Remaps CapsLock to Escape
 exec --no-startup-id remaps
 # Enable tap to click
@@ -48,6 +48,8 @@ exec --no-startup-id greenclip daemon
 exec --no-startup-id xfce-polkit
 # Screenshot
 exec --no-startup-id flameshot
+# Notification
+exec --no-startup-id dunst
 
 # Volume Control
 bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer --increase 5 && pkill -RTMIN+10 i3blocks
@@ -71,12 +73,12 @@ bindsym $mod+Shift+Return exec alacritty -t float
 bindsym $mod+q kill
 
 ### Costum Keybinds
-bindsym $mod+Shift+Escape exec --no-startup-id power-dmenu
-bindsym $mod+Shift+q exec --no-startup-id kill-dmenu
-bindsym $mod+w exec --no-startup-id websearch-dmenu
+bindsym $mod+Shift+Escape exec --no-startup-id power-rofi
+bindsym $mod+Shift+q exec --no-startup-id kill-rofi
+bindsym $mod+w exec --no-startup-id websearch-rofi
 
 # Clipboard keybinds
-bindsym $mod+p exec --no-startup-id greenclip-dmenu
+bindsym $mod+p exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 bindsym $mod+Shift+p exec --no-startup-id greenclip clear
 
 # Screenshot Keybins
@@ -103,7 +105,7 @@ bindsym $mod+u border pixel 2
 bindsym $mod+Shift+plus sticky toggle
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run -p run
+bindsym $mod+d exec --no-startup-id rofi -show drun
 
 # change focus
 bindsym $mod+h focus left
