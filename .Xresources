@@ -1,6 +1,5 @@
 ! Base16 Tomorrow Night
 ! Scheme: Chris Kempson (http://chriskempson.com)
-
 #define base00 #2d2d2d
 #define base01 #393939
 #define base02 #515151
@@ -49,12 +48,13 @@
 !! st.alpha: 0.88
 !! st.borderpx: 0
 !! 
-!! !! dmenu :
-!! dmenu.foreground: nord6
-!! dmenu.background: nord0
-!! dmenu.selbackground: nord11
-!! dmenu.selforeground: nord0
-!! dmenu.font: FiraCode Nerd Font-10
+!! dmenu :
+dmenu.foreground: #bbbbbb
+dmenu.background: #222222
+dmenu.selbackground: #005577
+dmenu.selforeground: #eeeeee
+dmenu.font: FiraCode Nerd Font-10
 !! 
 !! Xcursor.theme: Comix Cursor original White Opaque
 !! Xcursor.size: 48
+!

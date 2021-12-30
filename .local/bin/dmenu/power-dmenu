@@ -4,8 +4,8 @@ DMENU='dmenu -i'
 choice=$(echo -e "shutdown\nsuspend\nreboot\nhibernate" | $DMENU)
 
 case "$choice" in
-  shutdown) loginctl poweroff ;;
-  reboot)  loginctl reboot ;;
-  suspend) loginctl suspend ;;
-  hibernate) loginctl hibernate ;;
+  shutdown) systemctl poweroff ;;
+  reboot)  systemctl reboot ;;
+  suspend) systemctl suspend ;;
+  hibernate) systemctl hibernate ;;
 esac

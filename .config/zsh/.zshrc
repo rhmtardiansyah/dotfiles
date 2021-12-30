@@ -15,7 +15,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#6272A4,bold"
 # History in cache directory:
 HISTSIZE=10000000
 SAVEHIST=10000000
-HISTFILE=~/.cache/zsh/history
+HISTFILE=~/.cache/history
 
 # Load aliases and shortcuts if existent.
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc"
@@ -61,6 +61,7 @@ bindkey -s '^O' 'ranger-cd\n'
 source ~/.local/app/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source ~/.local/app/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.local/app/powerlevel10k/powerlevel10k.zsh-theme
+source /usr/share/nvm/init-nvm.sh
 
 bindkey '^ ' autosuggest-accept
 

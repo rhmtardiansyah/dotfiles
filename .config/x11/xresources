@@ -1,0 +1,6 @@
+!! dmenu :
+dmenu.foreground: #bbbbbb
+dmenu.background: #222222
+dmenu.selbackground: #005577
+dmenu.selforeground: #eeeeee
+dmenu.font: FiraCode Nerd Font-10

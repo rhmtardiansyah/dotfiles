@@ -14,7 +14,7 @@ fi
 
 # Default programs:
 export EDITOR="nvim"
-export BROWSER="chromium"
+#export BROWSER="chromium"
 #export TERMINAL="alacritty"
 
 # ~/ Clean-up:
@@ -27,6 +27,8 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+export XINITRC="${XDG_CONFIG_HOME:-$HOME/.config}/x11/xinitrc"
 export LESSHISTFILE="-"
 export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
 export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
@@ -34,4 +36,4 @@ export HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/history"
 export _JAVA_AWT_WM_NONREPARENTING=1	# Fix for Java applications in dwm
 
 
-# [ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && exec startx "$XINITRC"
+[ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && exec startx "$XINITRC"
