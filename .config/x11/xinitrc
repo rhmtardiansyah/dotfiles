@@ -10,4 +10,5 @@ xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources &
 #export GDK_BACKEND=x11
 #exec gnome-session
 
-ssh-agent dwm
+#ssh-agent dwm
+ssh-agent i3

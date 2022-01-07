@@ -61,7 +61,8 @@ bindkey -s '^O' 'ranger-cd\n'
 source ~/.local/app/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source ~/.local/app/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.local/app/powerlevel10k/powerlevel10k.zsh-theme
-source /usr/share/nvm/init-nvm.sh
+#source /usr/share/nvm/init-nvm.sh
+source ~/.local/app/zsh-nvm/zsh-nvm.plugin.zsh
 
 bindkey '^ ' autosuggest-accept
 

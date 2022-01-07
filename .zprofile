@@ -15,7 +15,7 @@ fi
 # Default programs:
 export EDITOR="nvim"
 #export BROWSER="chromium"
-#export TERMINAL="alacritty"
+export TERMINAL="alacritty"
 
 # ~/ Clean-up:
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -33,6 +33,7 @@ export LESSHISTFILE="-"
 export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
 export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 export HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/history"
+export PASSWORD_STORE_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/password-store"
 export _JAVA_AWT_WM_NONREPARENTING=1	# Fix for Java applications in dwm
 
 

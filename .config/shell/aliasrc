@@ -13,7 +13,8 @@ alias \
 alias \
 	ls="exa --group-directories-first --icons" \
 	grep="grep --color=auto" \
-	diff="diff --color=auto"
+	diff="diff --color=auto" \
+    cat="highlight -O ansi --force"
 
 alias \
     bare='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
@@ -25,3 +26,8 @@ alias \
 
 alias \
     clean="make clean && rm -rf config.h"
+
+alias \
+    start-docker="sudo systemctl start docker" \
+    stop-docker="sudo systemctl stop docker.service docker.socket"\
+
