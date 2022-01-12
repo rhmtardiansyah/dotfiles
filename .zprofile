@@ -12,6 +12,10 @@ if [ -d "$HOME/.local/bin/rofi" ] ;
   then PATH="$HOME/.local/bin/rofi:$PATH"
 fi
 
+if [ -d "/home/rahmat/.local/bin/dwm-script" ] ;
+  then PATH="$HOME/.local/bin/dwm-script:$PATH"
+fi
+
 # Default programs:
 export EDITOR="nvim"
 #export BROWSER="chromium"

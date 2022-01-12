@@ -1,5 +1,5 @@
 #!/bin/sh
-TEMP=$(sensors | awk '/Tctl:/ {print int($2)}')
+TEMP=$(sensors | awk '/Tdie:/ {print int($2)}')
 
 if [ $TEMP -ge 0 ] && [ $TEMP -le 50 ]; then
     echo -e "<span color='#EBCB8B'></span> : $TEMP°C\n"

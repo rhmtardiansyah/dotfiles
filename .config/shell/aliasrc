@@ -31,3 +31,5 @@ alias \
     start-docker="sudo systemctl start docker" \
     stop-docker="sudo systemctl stop docker.service docker.socket"\
 
+alias \
+    running_services=' sudo systemctl list-units  --type=service'

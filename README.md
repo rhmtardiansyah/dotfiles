@@ -65,7 +65,7 @@ pacman -S xwallpaper
 
 ## utilities
 
-pacman -S ntfs-3g xcape wget lxappearance yt-dlp pacman-contrib htop time ueberzug highlight bat
+pacman -S ntfs-3g xcape wget lxappearance yt-dlp pacman-contrib htop time ueberzug highlight bat unrar xsensors neofetch acpi gvfs-mtp
 
 ## compositor
 
@@ -100,7 +100,7 @@ pacman -S ranger gvfs tumbler thunar-volman thunar-archive-plugin thunar-media-t
 ## Development
 
 yay -S nvm jdk8-openjdk
-pacman -S docker docker-compose
+pacman -S docker docker-compose ruby
 [node](https://www.ubuntupit.com/how-to-install-node-version-manager-tool-nvm-on-linux-system/)
 
 ## Video Player
@@ -111,5 +111,7 @@ pacman -S mpv
 pacman -S sxiv
 
 ## language server
-
 pacman -S lua-language-server
+
+## keyring
+pacman -S seahorse gnome-keyring pass
