@@ -3,6 +3,7 @@ Name=Visual Studio Code
 Comment=Programming Text Editor
 Exec=/home/rahmat/.local/app/VSCode-linux-x64/bin/code
 Icon=/home/rahmat/.local/app/VSCode-linux-x64/resources/app/resources/linux/code.png
+Categories=Development;
 Terminal=false
 Type=Application
 Categories=Programming;
