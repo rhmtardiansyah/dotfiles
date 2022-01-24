@@ -27,9 +27,14 @@ alias \
 alias \
     clean="make clean && rm -rf config.h"
 
-alias \
-    start-docker="sudo systemctl start docker" \
-    stop-docker="sudo systemctl stop docker.service docker.socket"\
+# alias \
+#     start-docker="sudo systemctl start docker" \
+#     stop-docker="sudo systemctl stop docker.service docker.socket"\
+# 
+# alias \
+#     running_services=' sudo systemctl list-units  --type=service'
 
 alias \
-    running_services=' sudo systemctl list-units  --type=service'
+    start-docker="sudo rc-service docker start" \
+    stop-docker="sudo rc-service docker stop" \
+    status-docker="sudo rc-service docker status" \

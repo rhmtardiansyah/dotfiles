@@ -8,7 +8,7 @@ esac
 
 # PulseAudio
 in_mute=$(pamixer --source 2 --get-mute)
-in_vol=$(pamixer --source 1 --get-volume)
+in_vol=$(pamixer --source 2 --get-volume)
 
 # Alsa
 # in_mute=$(awk -F"[][]" '/Left:/ { print $4 }' <(amixer sget Capture))

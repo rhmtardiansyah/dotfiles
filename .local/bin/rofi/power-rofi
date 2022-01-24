@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DMENU='dmenu -i'
+DMENU='rofi -dmenu -i'
 choice=$(echo -e "shutdown\nsuspend\nreboot\nhibernate" | $DMENU)
 
 case "$choice" in

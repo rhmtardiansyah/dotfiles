@@ -24,16 +24,17 @@ gaps outer $gapsouter
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango: monospace, FiraCode Nerd Font, JetBrainsMono Nerd Font 11
+font pango: JetBrainsMono Nerd Font, monospace, FiraCode Nerd Font 11
 
 ### Auto Start
 # set brightness
 exec --no-startup-id brightnessctl set 30%
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
+#exec --no-startup-id nm-applet
+exec --no-startup-id connman-gtk
 # Set Wallpaper
-exec --no-startup-id xwallpaper --zoom ~/pic/Wallpapers/Wallpaper-01.jpg
+exec --no-startup-id xwallpaper --zoom ~/Pictures/Wallpapers/Wallpaper-01.jpg
 # Remaps CapsLock to Escape
 exec --no-startup-id remaps
 # Enable tap to click
@@ -42,15 +43,16 @@ exec --no-startup-id xinput set-prop "SYNA0001:00 06CB:CE2D Touchpad" "libinput 
 exec --no-startup-id xset r rate 300 50
 # compositor
 #exec --no-startup-id picom
-exec --no-startup-id xcompmgr
+#exec --no-startup-id xcompmgr
+exec --no-startup-id compix
 # clipboard manager
-exec --no-startup-id greenclip daemon
+#exec --no-startup-id greenclip daemon
 # Policy Kit
-exec --no-startup-id xfce-polkit
+#exec --no-startup-id xfce-polkit
 # Screenshot
 exec --no-startup-id flameshot
 # Notification
-exec --no-startup-id dunst
+#exec --no-startup-id dunst
 
 # Volume Control
 bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer --increase 5 && pkill -RTMIN+10 i3blocks
@@ -87,7 +89,7 @@ bindsym $mod+Shift+p exec --no-startup-id pkill greenclip && greenclip clear && 
 # Screenshot Keybins
 bindsym Print exec --no-startup-id flameshot full -c
 bindsym $Mod+Print exec --no-startup-id flameshot gui
-bindsym $Mod+Shift+Print exec --no-startup-id flameshot full -c -d 3000 -p ~/pic/screenshot
+bindsym $Mod+Shift+Print exec --no-startup-id flameshot full -c -d 3000 -p ~/Pictures/Screenshots
 
 bindsym $mod+v exec --no-startup-id alacritty -t float -e "pulsemixer"
 
