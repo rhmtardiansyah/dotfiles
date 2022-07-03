@@ -113,7 +113,7 @@
     libsForQt5.ark
   ];
 
-  nixpkgs.config.chromium.commandLineArgs = "--force-dark-mode --enable-features=WebUIDarkMode --password-store=gnome";
+  nixpkgs.config.chromium.commandLineArgs = "--force-dark-mode --enable-features=WebUIDarkMode --password-store=kwallet5";
 
   services.flatpak.enable = true;
 
