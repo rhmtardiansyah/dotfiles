@@ -9,6 +9,8 @@
     pkgs.pfetch
     pkgs.exa
     pkgs.btop
+    pkgs.scrcpy
+    pkgs.screenkey
 
     # Work
     pkgs.vscode
