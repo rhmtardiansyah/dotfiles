@@ -1,9 +1,0 @@
-[Desktop Entry]
-Version=1.0
-Type=Application
-Name=Pixel Android 10
-Exec=emulator -no-audio -avd Pixel_API_29
-Icon=/home/rahmat/.local/app/android-studio/bin/studio.png
-Categories=Development;IDE;
-Terminal=false
-Name[en_GB]=Pixel.desktop

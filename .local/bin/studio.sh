@@ -1,1 +1,0 @@
-/home/rahmat/.local/app/android-studio/bin/studio.sh
