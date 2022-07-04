@@ -45,17 +45,26 @@
     LC_TIME = "en_US.utf8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the KDE
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
-
   # Configure keymap in X11
   services.xserver = {
+    enable = true;
     layout = "us";
     xkbVariant = "";
+    desktopManager = {
+      xterm.enable = false;
+      plasma5.enable = true;
+    };
+    displayManager = {
+      sddm.enable = true;
+      defaultSession = "none+i3";
+    };
+    windowManager.i3 = {
+      enable = true;
+      package = pkgs.i3-gaps;
+      extraPackages = with pkgs; [
+        i3blocks
+     ];
+    };
   };
 
   # Enable CUPS to print documents.
@@ -111,8 +120,13 @@
 
     # KDE
     libsForQt5.ark
+
+    # i3
+    lxappearance
+    rofi
   ];
 
+  # Chromium
   nixpkgs.config.chromium.commandLineArgs = "--force-dark-mode --enable-features=WebUIDarkMode --password-store=kwallet5";
 
   services.flatpak.enable = true;

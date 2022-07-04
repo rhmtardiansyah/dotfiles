@@ -9,7 +9,11 @@
     pkgs.pfetch
     pkgs.exa
     pkgs.btop
+    pkgs.htop
     pkgs.scrcpy
+
+    # Gui
+    pkgs.pavucontrol
     pkgs.screenkey
 
     # Work
@@ -55,6 +59,8 @@
       }
     ];
   };
+  
+  programs.neovim.withNodeJs = true;
 
   programs.git = {
     enable = true;
