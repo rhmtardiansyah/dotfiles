@@ -10,11 +10,13 @@
     pkgs.exa
     pkgs.btop
     pkgs.scrcpy
-    pkgs.flameshot
+    pkgs.tree
+    pkgs.gcc
 
     # Gui
     pkgs.pavucontrol
     pkgs.screenkey
+    pkgs.flameshot
 
     # Work
     pkgs.vscode
