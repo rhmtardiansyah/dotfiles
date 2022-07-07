@@ -84,6 +84,7 @@
     ntfs3g
     neovim xclip xsel
     wget
+    git
 
     # Browser
     chromium
