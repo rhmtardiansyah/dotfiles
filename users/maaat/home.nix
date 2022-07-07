@@ -58,6 +58,7 @@
         };
       }
     ];
+    envExtra = "export PATH=~/.npm-packages/bin:$PATH\nexport NODE_PATH=~/.npm-packages/lib/node_modules";
   };
   
   programs.git = {
