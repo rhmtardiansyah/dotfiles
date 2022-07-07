@@ -1,9 +1,4 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
-
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -18,10 +13,6 @@
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -51,21 +42,13 @@
     layout = "us";
     xkbVariant = "";
     desktopManager = {
-      xterm.enable = false;
       plasma5.enable = true;
     };
     displayManager = {
       sddm.enable = true;
-      defaultSession = "none+i3";
-    };
-    windowManager.i3 = {
-      enable = true;
-      package = pkgs.i3-gaps;
-      extraPackages = with pkgs; [
-        i3blocks
-     ];
     };
   };
+
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -79,12 +62,6 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -99,12 +76,13 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.joypixels.acceptLicense = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     ntfs3g
-    neovim wl-clipboard xclip xsel
+    neovim xclip xsel
     wget
 
     # Browser
@@ -121,9 +99,10 @@
     # KDE
     libsForQt5.ark
 
-    # i3
-    lxappearance
-    rofi
+    # Fonts
+    noto-fonts-cjk-sans
+    noto-fonts-emoji
+    joypixels
   ];
 
   # Chromium
@@ -131,13 +110,7 @@
 
   services.flatpak.enable = true;
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
+  programs.dconf.enable = true;
 
   system.stateVersion = "22.05"; # Did you read the comment?
 

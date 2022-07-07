@@ -9,8 +9,8 @@
     pkgs.pfetch
     pkgs.exa
     pkgs.btop
-    pkgs.htop
     pkgs.scrcpy
+    pkgs.flameshot
 
     # Gui
     pkgs.pavucontrol
@@ -60,8 +60,6 @@
     ];
   };
   
-  programs.neovim.withNodeJs = true;
-
   programs.git = {
     enable = true;
     userName  = "Rahmat Ardiansyah";
