@@ -12,6 +12,10 @@
     pkgs.scrcpy
     pkgs.tree
     pkgs.gcc
+    pkgs.tree-sitter
+    pkgs.ripgrep
+    pkgs.stylua
+    pkgs.fd
 
     # Gui
     pkgs.pavucontrol
@@ -31,6 +35,24 @@
         success_symbol = "[➜](bold green)";
         error_symbol = "[➜](bold red)";
       };
+    };
+  };
+
+  programs.bash = {
+    enable = true;
+  };
+
+  programs.fish = {
+    enable = true;
+    shellAliases = {
+      ls = "exa --group-directories-first --icons";
+      ll = "ls -l";
+      la = "ls -la";
+      ".." = "cd ..";
+      "..." = "cd ../..";
+      v = "nvim";
+      vi = "nvim";
+      vim = "nvim";
     };
   };
 
