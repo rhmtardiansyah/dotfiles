@@ -99,6 +99,7 @@
 
     # KDE
     libsForQt5.ark
+    libsForQt5.kcolorchooser
 
     # Fonts
     noto-fonts-cjk-sans
