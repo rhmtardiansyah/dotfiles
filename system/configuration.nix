@@ -92,6 +92,7 @@
 
     # Terminal
     alacritty
+    kitty
 
     # Extra
     mpv
